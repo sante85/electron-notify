@@ -7,6 +7,10 @@ const electron = require('electron')
 const BrowserWindow = electron.BrowserWindow
 const ipc = electron.ipcMain
 
+if(!ipc)
+  ipc = electron.remote.ipcMain
+
+
 // One animation at a time
 const AnimationQueue = function(options) {
   this.options = options
